@@ -3,12 +3,12 @@
 body {
   font-family: "Goudy Bookletter 1911", serif;
   color: #fff;
-  /* background: url("https://cms-assets.theasc.com/1-Libraries.jpeg?mtime=20180924121753"); */
 }
 
 body::after {
   content: "";
   background: url("https://cms-assets.theasc.com/1-Libraries.jpeg?mtime=20180924121753g");
+  background-size: cover;
   opacity: 0.9;
   top: 0;
   left: 0;
@@ -42,5 +42,23 @@ h2 {
 
 .bookcase {
   background-color: #6b3200;
-  width: 30vw;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 36vw;
+  max-width: 36vw;
+  min-height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(200px, auto));
+  justify-items: center;
+}
+
+.line {
+  grid-column: 1 / -1;
+  height: 2px;
+  border-bottom: 2px solid white;
+  width: 100%;
+}
+
+.bookCard {
 }

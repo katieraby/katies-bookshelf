@@ -1,19 +1,13 @@
 import React from "react";
+import BookCard from "./BookCard";
 
 const BookList = props => {
   return (
     <main>
       <div>{props.children}</div>
       <section className="bookcase">
-        {props.booksToRead.map(book => {
-          console.log(book);
-          return (
-            <img
-              key={book.id}
-              src={book.volumeInfo.imageLinks.thumbnail}
-              alt={book.volumeInfo.title}
-            ></img>
-          );
+        {props.bookArray.map(book => {
+          return <BookCard key={book.id} {...book.volumeInfo} />;
         })}
       </section>
     </main>
