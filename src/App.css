@@ -1,13 +1,46 @@
 @import url("https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&display=swap");
 
-.title {
-  border-bottom: 2px solid pink;
-  padding-bottom: 5px;
-  text-align: center;
+body {
   font-family: "Goudy Bookletter 1911", serif;
+  color: #fff;
+  /* background: url("https://cms-assets.theasc.com/1-Libraries.jpeg?mtime=20180924121753"); */
+}
+
+body::after {
+  content: "";
+  background: url("https://cms-assets.theasc.com/1-Libraries.jpeg?mtime=20180924121753g");
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.title {
+  width: 100%;
+  top: 0;
+  padding: 20px;
   font-size: 50px;
+  background: #fff;
+  color: brown;
+  border-radius: 10px;
+}
+
+h2 {
+  background: #fff;
+  border-radius: 10px;
+  color: brown;
+  padding: 10px;
 }
 
 .bookshelves-container {
   display: flex;
+  justify-content: space-around;
+}
+
+.bookcase {
+  background-color: #6b3200;
+  width: 30vw;
 }
