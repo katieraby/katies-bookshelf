@@ -8,6 +8,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        {this.state.isLoaded ? <p>Bookshelves</p> : null}
       </div>
     );
   }
