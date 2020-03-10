@@ -53,12 +53,18 @@ h2 {
   justify-items: center;
 }
 
+/* 
 .line {
   grid-column: 1 / -1;
   height: 2px;
-  border-bottom: 2px solid white;
   width: 100%;
-}
+} */
 
 .bookCard {
+}
+
+.btn-finishedBook {
+  align-self: center;
+  padding: 20px;
+  border-radius: 30px;
 }

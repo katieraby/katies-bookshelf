@@ -632,133 +632,48 @@ class Books extends Component {
         }
       }
     ],
-    booksFinished: [
-      {
-        kind: "books#volume",
-        id: "exgMbbOgQugC",
-        etag: "0MXpL/KWCBE",
-        selfLink: "https://www.googleapis.com/books/v1/volumes/exgMbbOgQugC",
-        volumeInfo: {
-          title: "La Mécanique du coeur",
-          authors: ["Mathias Malzieu"],
-          publisher: "Flammarion",
-          publishedDate: "2011-08-12T00:00:00+02:00",
-          description:
-            "Édimbourg, 1874. Jack naît le jour le plus froid du monde et son cœur en reste gelé. Mi-sorcière mi-chaman, la sage-femme qui aide à l'accouchement parvient à sauver le nourrisson en remplaçant le cœur défectueux par une horloge. Cette prothèse ...",
-          industryIdentifiers: [
-            {
-              type: "ISBN_13",
-              identifier: "9782081236684"
-            },
-            {
-              type: "ISBN_10",
-              identifier: "2081236680"
-            }
-          ],
-          readingModes: {
-            text: true,
-            image: true
-          },
-          pageCount: 186,
-          printType: "BOOK",
-          categories: ["Fiction"],
-          averageRating: 1.0,
-          ratingsCount: 1,
-          maturityRating: "NOT_MATURE",
-          allowAnonLogging: true,
-          contentVersion: "1.28.30.0.preview.3",
-          panelizationSummary: {
-            containsEpubBubbles: false,
-            containsImageBubbles: false
-          },
-          imageLinks: {
-            smallThumbnail:
-              "http://books.google.com/books/content?id=exgMbbOgQugC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            thumbnail:
-              "http://books.google.com/books/content?id=exgMbbOgQugC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-          },
-          previewLink:
-            "http://books.google.co.uk/books?id=exgMbbOgQugC&printsec=frontcover&hl=&source=gbs_api",
-          infoLink:
-            "https://play.google.com/store/books/details?id=exgMbbOgQugC&source=gbs_api",
-          canonicalVolumeLink:
-            "https://play.google.com/store/books/details?id=exgMbbOgQugC"
-        },
-        layerInfo: {
-          layers: [
-            {
-              layerId: "geo",
-              volumeAnnotationsVersion: "39"
-            }
-          ]
-        },
-        saleInfo: {
-          country: "GB",
-          saleability: "FOR_SALE",
-          isEbook: true,
-          listPrice: {
-            amount: 4.99,
-            currencyCode: "GBP"
-          },
-          retailPrice: {
-            amount: 4.99,
-            currencyCode: "GBP"
-          },
-          buyLink:
-            "https://play.google.com/store/books/details?id=exgMbbOgQugC&rdid=book-exgMbbOgQugC&rdot=1&source=gbs_api",
-          offers: [
-            {
-              finskyOfferType: 1,
-              listPrice: {
-                amountInMicros: 4990000.0,
-                currencyCode: "GBP"
-              },
-              retailPrice: {
-                amountInMicros: 4990000.0,
-                currencyCode: "GBP"
-              },
-              giftable: true
-            }
-          ]
-        },
-        accessInfo: {
-          country: "GB",
-          viewability: "PARTIAL",
-          embeddable: true,
-          publicDomain: false,
-          textToSpeechPermission: "ALLOWED",
-          epub: {
-            isAvailable: true,
-            acsTokenLink:
-              "http://books.google.co.uk/books/download/La_M%C3%A9canique_du_coeur-sample-epub.acsm?id=exgMbbOgQugC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-          },
-          pdf: {
-            isAvailable: true,
-            acsTokenLink:
-              "http://books.google.co.uk/books/download/La_M%C3%A9canique_du_coeur-sample-pdf.acsm?id=exgMbbOgQugC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-          },
-          webReaderLink:
-            "http://play.google.com/books/reader?id=exgMbbOgQugC&hl=&printsec=frontcover&source=gbs_api",
-          accessViewStatus: "SAMPLE",
-          quoteSharingAllowed: false
-        }
-      }
-    ]
+    booksFinished: [],
+    selectedBook: ""
   };
 
   render() {
     const { booksToRead, booksFinished } = this.state;
     return (
       <section className="bookshelves-container">
-        <BookList bookArray={booksToRead}>
+        <BookList bookArray={booksToRead} selectedBook={this.isSelectedBook}>
           <h2>Books I want to read:</h2>
         </BookList>
-        <BookList bookArray={booksFinished}>
+        <button onClick={this.completeBook} className="btn-finishedBook">
+          Move to Read <span role="img">→</span>
+        </button>
+        <BookList bookArray={booksFinished} selectedBook={this.isSelectedBook}>
           <h2>Books I have read:</h2>
         </BookList>
       </section>
     );
   }
+
+  isSelectedBook = bookName => {
+    this.setState({ selectedBook: bookName });
+  };
+
+  completeBook = () => {
+    const { booksToRead, selectedBook } = this.state;
+    const bookToMove = booksToRead.filter(
+      book => book.volumeInfo.title === selectedBook
+    );
+    const newBooksToRead = booksToRead.filter(
+      book => book.volumeInfo.title !== selectedBook
+    );
+
+    this.setState(currentState => {
+      const bookObj = bookToMove[0];
+      return {
+        booksToRead: newBooksToRead,
+        booksFinished: [...currentState.booksFinished, bookObj]
+      };
+    });
+  };
 }
 
 export default Books;

@@ -6,8 +6,15 @@ const BookList = props => {
     <main>
       <div>{props.children}</div>
       <section className="bookcase">
+        {console.log(props.bookArray)}
         {props.bookArray.map(book => {
-          return <BookCard key={book.id} {...book.volumeInfo} />;
+          return (
+            <BookCard
+              key={book.id}
+              {...book.volumeInfo}
+              selectedBook={props.selectedBook}
+            />
+          );
         })}
       </section>
     </main>
