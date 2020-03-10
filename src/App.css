@@ -41,8 +41,10 @@ h2 {
 }
 
 .bookcase {
-  background-color: #6b3200;
-  border-radius: 10px;
+  background-color: #4c1c00;
+  border-top: 10px solid #311200;
+  border-bottom: 15px solid #311200;
+  border-radius: 0px;
   padding: 10px;
   min-width: 36vw;
   max-width: 36vw;
