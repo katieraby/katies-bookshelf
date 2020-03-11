@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookList from "./BookList";
+import { DragDropContext } from "react-beautiful-dnd";
 
 class Books extends Component {
   state = {
@@ -639,19 +640,67 @@ class Books extends Component {
   render() {
     const { booksToRead, booksFinished } = this.state;
     return (
-      <section className="bookshelves-container">
-        <BookList bookArray={booksToRead} selectedBook={this.isSelectedBook}>
-          <h2>Books I want to read:</h2>
-        </BookList>
-        <button onClick={this.completeBook} className="btn-finishedBook">
-          Move to Read <span role="img">→</span>
-        </button>
-        <BookList bookArray={booksFinished} selectedBook={this.isSelectedBook}>
-          <h2>Books I have read:</h2>
-        </BookList>
-      </section>
+      <DragDropContext onDragEnd={this.onDragEnd}>
+        <section className="bookshelves-container">
+          <BookList
+            bookArray={booksToRead}
+            selectedBook={this.isSelectedBook}
+            id="booksToRead"
+          >
+            <h2>Books I want to read:</h2>
+          </BookList>
+          {/* <button onClick={this.completeBook} className="btn-finishedBook">
+            Move to Read <span role="img">→</span>
+          </button> */}
+          <BookList
+            bookArray={booksFinished}
+            selectedBook={this.isSelectedBook}
+            id="booksFinished"
+          >
+            <h2>Books I have read:</h2>
+          </BookList>
+        </section>
+      </DragDropContext>
     );
   }
+
+  onDragEnd = result => {
+    const { destination, source, draggableId } = result;
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    if (destination.droppableId === source.droppableId) {
+      const newBookArray = [...this.state[source.droppableId]];
+      const spliced = newBookArray.splice(source.index, 1);
+      newBookArray.splice(destination.index, 0, { ...spliced[0] });
+
+      this.setState({ [source.droppableId]: newBookArray });
+    }
+
+    //id is either going to be "booksToRead" or "booksFinished"
+    //move the draggableid from its old index in the booksToRead array to its new index in the booksFinished array
+    //array.from the old array -- newBooksToReadArray = array.from (this.state.booksToRead)
+    //splice newBooksToReadArray.splice(source.index, 1)
+    //reorder -- newBooksToReadArray.splice(destination.index, 0, draggableId)
+    //set state with new array
+
+    //if statement to check which column is being dropped into and then can specify the state
+    //remove it from wherever it came from
+    // const newArray = Array.from(this.state[draggableId]).splice(source.index, 1)
+    // this.setState((currentState) =>
+    //  { return {currentState.draggableId: newArray}})
+
+    //splice on the this.state.booksFinished (destination.index, 0, draggableId)
+  };
 
   isSelectedBook = bookName => {
     this.setState({ selectedBook: bookName });

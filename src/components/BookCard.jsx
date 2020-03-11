@@ -1,17 +1,32 @@
 import React from "react";
+import { Draggable } from "react-beautiful-dnd";
+import styled from "styled-components";
 
-const BookCard = ({ title, imageLinks, selectedBook }) => {
+const Container = styled.div`
+  padding: 1px;
+`;
+
+const BookCard = ({ title, imageLinks, selectedBook, id, index }) => {
   return (
-    <span className="bookCard">
-      <img
-        src={imageLinks.thumbnail}
-        alt={title}
-        onClick={() => {
-          selectedBook(title);
-        }}
-      ></img>
-      <div className="line"></div>
-    </span>
+    <Draggable draggableId={id} index={index}>
+      {provided => (
+        <span className="bookCard">
+          <Container
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            ref={provided.innerRef}
+          >
+            <img
+              src={imageLinks.thumbnail}
+              alt={title}
+              onClick={() => {
+                selectedBook(title);
+              }}
+            ></img>
+          </Container>
+        </span>
+      )}
+    </Draggable>
   );
 };
 
