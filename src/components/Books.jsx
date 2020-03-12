@@ -698,21 +698,6 @@ class Books extends Component {
         [destination.droppableId]: newDestinationArray
       });
     }
-
-    //id is either going to be "booksToRead" or "booksFinished"
-    //move the draggableid from its old index in the booksToRead array to its new index in the booksFinished array
-    //array.from the old array -- newBooksToReadArray = array.from (this.state.booksToRead)
-    //splice newBooksToReadArray.splice(source.index, 1)
-    //reorder -- newBooksToReadArray.splice(destination.index, 0, draggableId)
-    //set state with new array
-
-    //if statement to check which column is being dropped into and then can specify the state
-    //remove it from wherever it came from
-    // const newArray = Array.from(this.state[draggableId]).splice(source.index, 1)
-    // this.setState((currentState) =>
-    //  { return {currentState.draggableId: newArray}})
-
-    //splice on the this.state.booksFinished (destination.index, 0, draggableId)
   };
 
   isSelectedBook = bookName => {
