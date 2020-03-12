@@ -686,6 +686,19 @@ class Books extends Component {
       this.setState({ [source.droppableId]: newBookArray });
     }
 
+    if (destination.droppableId !== source.droppableId) {
+      const newSourceArray = [...this.state[source.droppableId]];
+      const bookToMove = newSourceArray.splice(source.index, 1);
+
+      const newDestinationArray = [...this.state[destination.droppableId]];
+      newDestinationArray.splice(destination.index, 0, { ...bookToMove[0] });
+
+      this.setState({
+        [source.droppableId]: newSourceArray,
+        [destination.droppableId]: newDestinationArray
+      });
+    }
+
     //id is either going to be "booksToRead" or "booksFinished"
     //move the draggableid from its old index in the booksToRead array to its new index in the booksFinished array
     //array.from the old array -- newBooksToReadArray = array.from (this.state.booksToRead)
