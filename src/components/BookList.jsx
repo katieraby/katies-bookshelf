@@ -8,8 +8,6 @@ const Container = styled.div`
 `;
 
 const BookList = (props) => {
-  const { provided, innerRef } = props;
-
   return (
     <>
       <main className="bookcase">

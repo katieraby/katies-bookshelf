@@ -15,7 +15,7 @@ const Title = styled.h1`
 const Header = () => {
   return (
     <header>
-      <Title>Katie's Bookshelf</Title>
+      <Title>Katie's Bookshelves</Title>
     </header>
   );
 };

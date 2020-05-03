@@ -688,7 +688,9 @@ class Books extends Component {
       const spliced = newBookArray.splice(source.index, 1);
       newBookArray.splice(destination.index, 0, { ...spliced[0] });
 
-      this.setState({ [source.droppableId]: newBookArray });
+      this.setState({ [source.droppableId]: newBookArray }, () => {
+        localStorage.setItem("state", JSON.stringify(this.state));
+      });
     }
 
     if (destination.droppableId !== source.droppableId) {
@@ -698,10 +700,15 @@ class Books extends Component {
       const newDestinationArray = [...this.state[destination.droppableId]];
       newDestinationArray.splice(destination.index, 0, { ...bookToMove[0] });
 
-      this.setState({
-        [source.droppableId]: newSourceArray,
-        [destination.droppableId]: newDestinationArray,
-      });
+      this.setState(
+        {
+          [source.droppableId]: newSourceArray,
+          [destination.droppableId]: newDestinationArray,
+        },
+        () => {
+          localStorage.setItem("state", JSON.stringify(this.state));
+        }
+      );
     }
   };
 
@@ -718,13 +725,26 @@ class Books extends Component {
       (book) => book.volumeInfo.title !== selectedBook
     );
 
-    this.setState((currentState) => {
-      const bookObj = bookToMove[0];
-      return {
-        booksToRead: newBooksToRead,
-        booksFinished: [...currentState.booksFinished, bookObj],
-      };
-    });
+    this.setState(
+      (currentState) => {
+        const bookObj = bookToMove[0];
+        return {
+          booksToRead: newBooksToRead,
+          booksFinished: [...currentState.booksFinished, bookObj],
+        };
+      },
+      () => {
+        localStorage.setItem("state", JSON.stringify(this.state));
+      }
+    );
+  };
+
+  componentDidMount = () => {
+    const oldState = localStorage.state;
+    if (oldState !== undefined) {
+      const newState = JSON.parse(oldState);
+      this.setState(newState);
+    }
   };
 }
 
