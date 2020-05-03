@@ -3,6 +3,7 @@
 body {
   font-family: "Goudy Bookletter 1911", serif;
   color: #fff;
+  margin: 0;
 }
 
 body::after {
@@ -14,25 +15,8 @@ body::after {
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1;
-}
-
-.title {
-  width: 100%;
-  top: 0;
-  padding: 20px;
-  font-size: 50px;
-  background: #fff;
-  color: brown;
-  border-radius: 10px;
-}
-
-h2 {
-  background: #fff;
-  border-radius: 10px;
-  color: brown;
-  padding: 10px;
 }
 
 .bookshelves-container {
@@ -46,13 +30,9 @@ h2 {
   border-bottom: 15px solid #311200;
   border-radius: 0px;
   padding: 10px;
-  min-width: 36vw;
+  min-width: 20vw;
   max-width: 36vw;
   min-height: 60vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, minmax(200px, auto));
-  justify-items: center;
 }
 
 /* 
@@ -61,12 +41,3 @@ h2 {
   height: 2px;
   width: 100%;
 } */
-
-.bookCard {
-}
-
-.btn-finishedBook {
-  align-self: center;
-  padding: 20px;
-  border-radius: 30px;
-}

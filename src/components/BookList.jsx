@@ -4,19 +4,19 @@ import { Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 
 const Container = styled.div`
-  padding: 1px;
+  text-align: center;
 `;
 
-const BookList = props => {
+const BookList = (props) => {
   const { provided, innerRef } = props;
 
   return (
     <>
-      <div>{props.children}</div>
-      <main>
+      <main className="bookcase">
+        {props.children}
         <Droppable droppableId={props.id}>
-          {provided => (
-            <section className="bookcase">
+          {(provided) => (
+            <section>
               <Container ref={provided.innerRef} {...provided.droppableProps}>
                 {props.bookArray.map((book, index) => {
                   return (
