@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookList from "./BookList";
 import { DragDropContext } from "react-beautiful-dnd";
+import styled from "styled-components";
 
 class Books extends Component {
   state = {
@@ -20,16 +21,16 @@ class Books extends Component {
           industryIdentifiers: [
             {
               type: "ISBN_13",
-              identifier: "9782081236684"
+              identifier: "9782081236684",
             },
             {
               type: "ISBN_10",
-              identifier: "2081236680"
-            }
+              identifier: "2081236680",
+            },
           ],
           readingModes: {
             text: true,
-            image: true
+            image: true,
           },
           pageCount: 186,
           printType: "BOOK",
@@ -41,28 +42,28 @@ class Books extends Component {
           contentVersion: "1.28.30.0.preview.3",
           panelizationSummary: {
             containsEpubBubbles: false,
-            containsImageBubbles: false
+            containsImageBubbles: false,
           },
           imageLinks: {
             smallThumbnail:
               "http://books.google.com/books/content?id=exgMbbOgQugC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
             thumbnail:
-              "http://books.google.com/books/content?id=exgMbbOgQugC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              "http://books.google.com/books/content?id=exgMbbOgQugC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
           },
           previewLink:
             "http://books.google.co.uk/books?id=exgMbbOgQugC&printsec=frontcover&hl=&source=gbs_api",
           infoLink:
             "https://play.google.com/store/books/details?id=exgMbbOgQugC&source=gbs_api",
           canonicalVolumeLink:
-            "https://play.google.com/store/books/details?id=exgMbbOgQugC"
+            "https://play.google.com/store/books/details?id=exgMbbOgQugC",
         },
         layerInfo: {
           layers: [
             {
               layerId: "geo",
-              volumeAnnotationsVersion: "39"
-            }
-          ]
+              volumeAnnotationsVersion: "39",
+            },
+          ],
         },
         saleInfo: {
           country: "GB",
@@ -70,11 +71,11 @@ class Books extends Component {
           isEbook: true,
           listPrice: {
             amount: 4.99,
-            currencyCode: "GBP"
+            currencyCode: "GBP",
           },
           retailPrice: {
             amount: 4.99,
-            currencyCode: "GBP"
+            currencyCode: "GBP",
           },
           buyLink:
             "https://play.google.com/store/books/details?id=exgMbbOgQugC&rdid=book-exgMbbOgQugC&rdot=1&source=gbs_api",
@@ -83,15 +84,15 @@ class Books extends Component {
               finskyOfferType: 1,
               listPrice: {
                 amountInMicros: 4990000.0,
-                currencyCode: "GBP"
+                currencyCode: "GBP",
               },
               retailPrice: {
                 amountInMicros: 4990000.0,
-                currencyCode: "GBP"
+                currencyCode: "GBP",
               },
-              giftable: true
-            }
-          ]
+              giftable: true,
+            },
+          ],
         },
         accessInfo: {
           country: "GB",
@@ -102,18 +103,18 @@ class Books extends Component {
           epub: {
             isAvailable: true,
             acsTokenLink:
-              "http://books.google.co.uk/books/download/La_M%C3%A9canique_du_coeur-sample-epub.acsm?id=exgMbbOgQugC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+              "http://books.google.co.uk/books/download/La_M%C3%A9canique_du_coeur-sample-epub.acsm?id=exgMbbOgQugC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
           },
           pdf: {
             isAvailable: true,
             acsTokenLink:
-              "http://books.google.co.uk/books/download/La_M%C3%A9canique_du_coeur-sample-pdf.acsm?id=exgMbbOgQugC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+              "http://books.google.co.uk/books/download/La_M%C3%A9canique_du_coeur-sample-pdf.acsm?id=exgMbbOgQugC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
           },
           webReaderLink:
             "http://play.google.com/books/reader?id=exgMbbOgQugC&hl=&printsec=frontcover&source=gbs_api",
           accessViewStatus: "SAMPLE",
-          quoteSharingAllowed: false
-        }
+          quoteSharingAllowed: false,
+        },
       },
       {
         kind: "books#volume",
@@ -130,16 +131,16 @@ class Books extends Component {
           industryIdentifiers: [
             {
               type: "ISBN_13",
-              identifier: "9780007269709"
+              identifier: "9780007269709",
             },
             {
               type: "ISBN_10",
-              identifier: "0007269706"
-            }
+              identifier: "0007269706",
+            },
           ],
           readingModes: {
             text: false,
-            image: false
+            image: false,
           },
           pageCount: 531,
           printType: "BOOK",
@@ -153,19 +154,19 @@ class Books extends Component {
             smallThumbnail:
               "http://books.google.com/books/content?id=5QRZ4z6A1WwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
             thumbnail:
-              "http://books.google.com/books/content?id=5QRZ4z6A1WwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              "http://books.google.com/books/content?id=5QRZ4z6A1WwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
           },
           previewLink:
             "http://books.google.co.uk/books?id=5QRZ4z6A1WwC&printsec=frontcover&hl=&source=gbs_api",
           infoLink:
             "http://books.google.co.uk/books?id=5QRZ4z6A1WwC&hl=&source=gbs_api",
           canonicalVolumeLink:
-            "https://books.google.com/books/about/The_Fellowship_of_the_Ring.html?hl=&id=5QRZ4z6A1WwC"
+            "https://books.google.com/books/about/The_Fellowship_of_the_Ring.html?hl=&id=5QRZ4z6A1WwC",
         },
         saleInfo: {
           country: "GB",
           saleability: "NOT_FOR_SALE",
-          isEbook: false
+          isEbook: false,
         },
         accessInfo: {
           country: "GB",
@@ -174,16 +175,16 @@ class Books extends Component {
           publicDomain: false,
           textToSpeechPermission: "ALLOWED_FOR_ACCESSIBILITY",
           epub: {
-            isAvailable: false
+            isAvailable: false,
           },
           pdf: {
-            isAvailable: false
+            isAvailable: false,
           },
           webReaderLink:
             "http://play.google.com/books/reader?id=5QRZ4z6A1WwC&hl=&printsec=frontcover&source=gbs_api",
           accessViewStatus: "SAMPLE",
-          quoteSharingAllowed: false
-        }
+          quoteSharingAllowed: false,
+        },
       },
       {
         kind: "books#volume",
@@ -202,16 +203,16 @@ class Books extends Component {
           industryIdentifiers: [
             {
               type: "ISBN_13",
-              identifier: "9780735211308"
+              identifier: "9780735211308",
             },
             {
               type: "ISBN_10",
-              identifier: "0735211302"
-            }
+              identifier: "0735211302",
+            },
           ],
           readingModes: {
             text: true,
-            image: false
+            image: false,
           },
           pageCount: 320,
           printType: "BOOK",
@@ -223,33 +224,33 @@ class Books extends Component {
           contentVersion: "1.7.4.0.preview.2",
           panelizationSummary: {
             containsEpubBubbles: false,
-            containsImageBubbles: false
+            containsImageBubbles: false,
           },
           imageLinks: {
             smallThumbnail:
               "http://books.google.com/books/content?id=lFhbDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
             thumbnail:
-              "http://books.google.com/books/content?id=lFhbDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+              "http://books.google.com/books/content?id=lFhbDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
           },
           previewLink:
             "http://books.google.co.uk/books?id=lFhbDwAAQBAJ&hl=&source=gbs_api",
           infoLink:
             "http://books.google.co.uk/books?id=lFhbDwAAQBAJ&hl=&source=gbs_api",
           canonicalVolumeLink:
-            "https://books.google.com/books/about/Atomic_Habits.html?hl=&id=lFhbDwAAQBAJ"
+            "https://books.google.com/books/about/Atomic_Habits.html?hl=&id=lFhbDwAAQBAJ",
         },
         layerInfo: {
           layers: [
             {
               layerId: "geo",
-              volumeAnnotationsVersion: "7"
-            }
-          ]
+              volumeAnnotationsVersion: "7",
+            },
+          ],
         },
         saleInfo: {
           country: "GB",
           saleability: "NOT_FOR_SALE",
-          isEbook: false
+          isEbook: false,
         },
         accessInfo: {
           country: "GB",
@@ -258,16 +259,16 @@ class Books extends Component {
           publicDomain: false,
           textToSpeechPermission: "ALLOWED",
           epub: {
-            isAvailable: true
+            isAvailable: true,
           },
           pdf: {
-            isAvailable: true
+            isAvailable: true,
           },
           webReaderLink:
             "http://play.google.com/books/reader?id=lFhbDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
           accessViewStatus: "NONE",
-          quoteSharingAllowed: false
-        }
+          quoteSharingAllowed: false,
+        },
       },
       {
         kind: "books#volume",
@@ -284,16 +285,16 @@ class Books extends Component {
           industryIdentifiers: [
             {
               type: "ISBN_13",
-              identifier: "9781446484005"
+              identifier: "9781446484005",
             },
             {
               type: "ISBN_10",
-              identifier: "1446484009"
-            }
+              identifier: "1446484009",
+            },
           ],
           readingModes: {
             text: true,
-            image: false
+            image: false,
           },
           pageCount: 304,
           printType: "BOOK",
@@ -305,28 +306,28 @@ class Books extends Component {
           contentVersion: "0.18.9.0.preview.2",
           panelizationSummary: {
             containsEpubBubbles: false,
-            containsImageBubbles: false
+            containsImageBubbles: false,
           },
           imageLinks: {
             smallThumbnail:
               "http://books.google.com/books/content?id=VJEYgJ305QcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
             thumbnail:
-              "http://books.google.com/books/content?id=VJEYgJ305QcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              "http://books.google.com/books/content?id=VJEYgJ305QcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
           },
           previewLink:
             "http://books.google.co.uk/books?id=VJEYgJ305QcC&printsec=frontcover&hl=&source=gbs_api",
           infoLink:
             "https://play.google.com/store/books/details?id=VJEYgJ305QcC&source=gbs_api",
           canonicalVolumeLink:
-            "https://play.google.com/store/books/details?id=VJEYgJ305QcC"
+            "https://play.google.com/store/books/details?id=VJEYgJ305QcC",
         },
         layerInfo: {
           layers: [
             {
               layerId: "geo",
-              volumeAnnotationsVersion: "14"
-            }
-          ]
+              volumeAnnotationsVersion: "14",
+            },
+          ],
         },
         saleInfo: {
           country: "GB",
@@ -334,11 +335,11 @@ class Books extends Component {
           isEbook: true,
           listPrice: {
             amount: 2.99,
-            currencyCode: "GBP"
+            currencyCode: "GBP",
           },
           retailPrice: {
             amount: 2.99,
-            currencyCode: "GBP"
+            currencyCode: "GBP",
           },
           buyLink:
             "https://play.google.com/store/books/details?id=VJEYgJ305QcC&rdid=book-VJEYgJ305QcC&rdot=1&source=gbs_api",
@@ -347,15 +348,15 @@ class Books extends Component {
               finskyOfferType: 1,
               listPrice: {
                 amountInMicros: 2990000.0,
-                currencyCode: "GBP"
+                currencyCode: "GBP",
               },
               retailPrice: {
                 amountInMicros: 2990000.0,
-                currencyCode: "GBP"
+                currencyCode: "GBP",
               },
-              giftable: true
-            }
-          ]
+              giftable: true,
+            },
+          ],
         },
         accessInfo: {
           country: "GB",
@@ -366,16 +367,16 @@ class Books extends Component {
           epub: {
             isAvailable: true,
             acsTokenLink:
-              "http://books.google.co.uk/books/download/Invisible_Monsters-sample-epub.acsm?id=VJEYgJ305QcC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+              "http://books.google.co.uk/books/download/Invisible_Monsters-sample-epub.acsm?id=VJEYgJ305QcC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
           },
           pdf: {
-            isAvailable: false
+            isAvailable: false,
           },
           webReaderLink:
             "http://play.google.com/books/reader?id=VJEYgJ305QcC&hl=&printsec=frontcover&source=gbs_api",
           accessViewStatus: "SAMPLE",
-          quoteSharingAllowed: false
-        }
+          quoteSharingAllowed: false,
+        },
       },
       {
         kind: "books#volume",
@@ -391,16 +392,16 @@ class Books extends Component {
           industryIdentifiers: [
             {
               type: "ISBN_10",
-              identifier: "1449496369"
+              identifier: "1449496369",
             },
             {
               type: "ISBN_13",
-              identifier: "9781449496364"
-            }
+              identifier: "9781449496364",
+            },
           ],
           readingModes: {
             text: false,
-            image: false
+            image: false,
           },
           pageCount: 226,
           printType: "BOOK",
@@ -412,25 +413,25 @@ class Books extends Component {
           contentVersion: "preview-1.0.0",
           panelizationSummary: {
             containsEpubBubbles: false,
-            containsImageBubbles: false
+            containsImageBubbles: false,
           },
           imageLinks: {
             smallThumbnail:
               "http://books.google.com/books/content?id=omO0tQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
             thumbnail:
-              "http://books.google.com/books/content?id=omO0tQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+              "http://books.google.com/books/content?id=omO0tQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
           },
           previewLink:
             "http://books.google.co.uk/books?id=omO0tQEACAAJ&hl=&source=gbs_api",
           infoLink:
             "http://books.google.co.uk/books?id=omO0tQEACAAJ&hl=&source=gbs_api",
           canonicalVolumeLink:
-            "https://books.google.com/books/about/Milk_and_Honey.html?hl=&id=omO0tQEACAAJ"
+            "https://books.google.com/books/about/Milk_and_Honey.html?hl=&id=omO0tQEACAAJ",
         },
         saleInfo: {
           country: "GB",
           saleability: "NOT_FOR_SALE",
-          isEbook: false
+          isEbook: false,
         },
         accessInfo: {
           country: "GB",
@@ -439,16 +440,16 @@ class Books extends Component {
           publicDomain: false,
           textToSpeechPermission: "ALLOWED",
           epub: {
-            isAvailable: false
+            isAvailable: false,
           },
           pdf: {
-            isAvailable: false
+            isAvailable: false,
           },
           webReaderLink:
             "http://play.google.com/books/reader?id=omO0tQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
           accessViewStatus: "NONE",
-          quoteSharingAllowed: false
-        }
+          quoteSharingAllowed: false,
+        },
       },
       {
         kind: "books#volume",
@@ -465,16 +466,16 @@ class Books extends Component {
           industryIdentifiers: [
             {
               type: "ISBN_10",
-              identifier: "0156013983"
+              identifier: "0156013983",
             },
             {
               type: "ISBN_13",
-              identifier: "9780156013987"
-            }
+              identifier: "9780156013987",
+            },
           ],
           readingModes: {
             text: false,
-            image: false
+            image: false,
           },
           pageCount: 85,
           printType: "BOOK",
@@ -486,25 +487,25 @@ class Books extends Component {
           contentVersion: "0.1.1.0.preview.0",
           panelizationSummary: {
             containsEpubBubbles: false,
-            containsImageBubbles: false
+            containsImageBubbles: false,
           },
           imageLinks: {
             smallThumbnail:
               "http://books.google.com/books/content?id=CvRJh3pUWdoC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
             thumbnail:
-              "http://books.google.com/books/content?id=CvRJh3pUWdoC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+              "http://books.google.com/books/content?id=CvRJh3pUWdoC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
           },
           previewLink:
             "http://books.google.co.uk/books?id=CvRJh3pUWdoC&hl=&source=gbs_api",
           infoLink:
             "http://books.google.co.uk/books?id=CvRJh3pUWdoC&hl=&source=gbs_api",
           canonicalVolumeLink:
-            "https://books.google.com/books/about/Le_petit_prince.html?hl=&id=CvRJh3pUWdoC"
+            "https://books.google.com/books/about/Le_petit_prince.html?hl=&id=CvRJh3pUWdoC",
         },
         saleInfo: {
           country: "GB",
           saleability: "NOT_FOR_SALE",
-          isEbook: false
+          isEbook: false,
         },
         accessInfo: {
           country: "GB",
@@ -513,16 +514,16 @@ class Books extends Component {
           publicDomain: false,
           textToSpeechPermission: "ALLOWED",
           epub: {
-            isAvailable: false
+            isAvailable: false,
           },
           pdf: {
-            isAvailable: false
+            isAvailable: false,
           },
           webReaderLink:
             "http://play.google.com/books/reader?id=CvRJh3pUWdoC&hl=&printsec=frontcover&source=gbs_api",
           accessViewStatus: "NONE",
-          quoteSharingAllowed: false
-        }
+          quoteSharingAllowed: false,
+        },
       },
       {
         kind: "books#volume",
@@ -539,16 +540,16 @@ class Books extends Component {
           industryIdentifiers: [
             {
               type: "ISBN_13",
-              identifier: "9781446485477"
+              identifier: "9781446485477",
             },
             {
               type: "ISBN_10",
-              identifier: "1446485471"
-            }
+              identifier: "1446485471",
+            },
           ],
           readingModes: {
             text: true,
-            image: false
+            image: false,
           },
           pageCount: 336,
           printType: "BOOK",
@@ -560,28 +561,28 @@ class Books extends Component {
           contentVersion: "1.33.28.0.preview.2",
           panelizationSummary: {
             containsEpubBubbles: false,
-            containsImageBubbles: false
+            containsImageBubbles: false,
           },
           imageLinks: {
             smallThumbnail:
               "http://books.google.com/books/content?id=o79lk6nTsRgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
             thumbnail:
-              "http://books.google.com/books/content?id=o79lk6nTsRgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              "http://books.google.com/books/content?id=o79lk6nTsRgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
           },
           previewLink:
             "http://books.google.co.uk/books?id=o79lk6nTsRgC&printsec=frontcover&hl=&source=gbs_api",
           infoLink:
             "https://play.google.com/store/books/details?id=o79lk6nTsRgC&source=gbs_api",
           canonicalVolumeLink:
-            "https://play.google.com/store/books/details?id=o79lk6nTsRgC"
+            "https://play.google.com/store/books/details?id=o79lk6nTsRgC",
         },
         layerInfo: {
           layers: [
             {
               layerId: "geo",
-              volumeAnnotationsVersion: "45"
-            }
-          ]
+              volumeAnnotationsVersion: "45",
+            },
+          ],
         },
         saleInfo: {
           country: "GB",
@@ -589,11 +590,11 @@ class Books extends Component {
           isEbook: true,
           listPrice: {
             amount: 5.99,
-            currencyCode: "GBP"
+            currencyCode: "GBP",
           },
           retailPrice: {
             amount: 5.99,
-            currencyCode: "GBP"
+            currencyCode: "GBP",
           },
           buyLink:
             "https://play.google.com/store/books/details?id=o79lk6nTsRgC&rdid=book-o79lk6nTsRgC&rdot=1&source=gbs_api",
@@ -602,15 +603,15 @@ class Books extends Component {
               finskyOfferType: 1,
               listPrice: {
                 amountInMicros: 5990000.0,
-                currencyCode: "GBP"
+                currencyCode: "GBP",
               },
               retailPrice: {
                 amountInMicros: 5990000.0,
-                currencyCode: "GBP"
+                currencyCode: "GBP",
               },
-              giftable: true
-            }
-          ]
+              giftable: true,
+            },
+          ],
         },
         accessInfo: {
           country: "GB",
@@ -621,24 +622,30 @@ class Books extends Component {
           epub: {
             isAvailable: true,
             acsTokenLink:
-              "http://books.google.co.uk/books/download/The_Handmaid_s_Tale-sample-epub.acsm?id=o79lk6nTsRgC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+              "http://books.google.co.uk/books/download/The_Handmaid_s_Tale-sample-epub.acsm?id=o79lk6nTsRgC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
           },
           pdf: {
-            isAvailable: false
+            isAvailable: false,
           },
           webReaderLink:
             "http://play.google.com/books/reader?id=o79lk6nTsRgC&hl=&printsec=frontcover&source=gbs_api",
           accessViewStatus: "SAMPLE",
-          quoteSharingAllowed: false
-        }
-      }
+          quoteSharingAllowed: false,
+        },
+      },
     ],
     booksFinished: [],
-    selectedBook: ""
+    selectedBook: "",
   };
 
   render() {
     const { booksToRead, booksFinished } = this.state;
+    const BookcaseHeader = styled.h2`
+      display: block;
+      text-align: center;
+      color: white;
+    `;
+
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <section className="bookshelves-container">
@@ -647,24 +654,22 @@ class Books extends Component {
             selectedBook={this.isSelectedBook}
             id="booksToRead"
           >
-            <h2>Books I want to read:</h2>
+            <BookcaseHeader>Books I want to read:</BookcaseHeader>
           </BookList>
-          {/* <button onClick={this.completeBook} className="btn-finishedBook">
-            Move to Read <span role="img">→</span>
-          </button> */}
+
           <BookList
             bookArray={booksFinished}
             selectedBook={this.isSelectedBook}
             id="booksFinished"
           >
-            <h2>Books I have read:</h2>
+            <BookcaseHeader>Books I have read:</BookcaseHeader>
           </BookList>
         </section>
       </DragDropContext>
     );
   }
 
-  onDragEnd = result => {
+  onDragEnd = (result) => {
     const { destination, source, draggableId } = result;
 
     if (!destination) {
@@ -695,29 +700,29 @@ class Books extends Component {
 
       this.setState({
         [source.droppableId]: newSourceArray,
-        [destination.droppableId]: newDestinationArray
+        [destination.droppableId]: newDestinationArray,
       });
     }
   };
 
-  isSelectedBook = bookName => {
+  isSelectedBook = (bookName) => {
     this.setState({ selectedBook: bookName });
   };
 
   completeBook = () => {
     const { booksToRead, selectedBook } = this.state;
     const bookToMove = booksToRead.filter(
-      book => book.volumeInfo.title === selectedBook
+      (book) => book.volumeInfo.title === selectedBook
     );
     const newBooksToRead = booksToRead.filter(
-      book => book.volumeInfo.title !== selectedBook
+      (book) => book.volumeInfo.title !== selectedBook
     );
 
-    this.setState(currentState => {
+    this.setState((currentState) => {
       const bookObj = bookToMove[0];
       return {
         booksToRead: newBooksToRead,
-        booksFinished: [...currentState.booksFinished, bookObj]
+        booksFinished: [...currentState.booksFinished, bookObj],
       };
     });
   };
